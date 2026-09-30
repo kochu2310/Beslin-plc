@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beslin Sam Mathew | Control & Automation Engineer</title>
+
+<meta name="description"
+content="Beslin Sam Mathew - PLC Automation Systems Engineer specializing in PLC programming, HMI, industrial automation and commissioning.">
+
+<style>
+
+:root{
+    --bg:#050b12;
+    --panel:#09131f;
+    --panel2:#0d1b29;
+    --cyan:#35e6d0;
+    --blue:#3d67ff;
+    --white:#f3f7fb;
+    --muted:#8b9baa;
+    --line:rgba(72,214,205,.22);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050b12;
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+/* TECHNICAL GRID */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+        linear-gradient(rgba(53,230,208,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(53,230,208,.035) 1px,transparent 1px);
+
+    background-size:55px 55px;
+
+    pointer-events:none;
+}
+
+/* NAVIGATION */
+
+nav{
+    height:72px;
+
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:1000;
+
+    background:rgba(5,11,18,.88);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-container{
+    width:92%;
+    max-width:1250px;
+
+    height:100%;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:19px;
+    letter-spacing:3px;
+    font-weight:700;
+}
+
+.logo span{
+    color:var(--cyan);
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#b9c4ce;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--cyan);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    padding:110px 20px 60px;
+
+    overflow:hidden;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1050px;
+
+    text-align:center;
+
+    position:relative;
+    z-index:5;
+}
+
+/* TOP LABEL */
+
+.eyebrow{
+    color:var(--cyan);
+
+    font-size:12px;
+    letter-spacing:5px;
+
+    margin-bottom:25px;
+
+    animation:fadeUp 1s ease forwards;
+}
+
+/* MAIN CARD */
+
+.hero-card{
+
+    max-width:780px;
+
+    margin:auto;
+
+    padding:65px 55px 45px;
+
+    border:1px solid rgba(73,229,214,.35);
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,28,43,.88),
+            rgba(5,13,22,.78)
+        );
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 0 80px rgba(44,218,203,.07),
+        inset 0 0 50px rgba(55,220,205,.025);
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:cardAppear 1.1s ease forwards;
+}
+
+.hero-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:radial-gradient(
+        circle,
+        rgba(53,230,208,.12),
+        transparent 65%
+    );
+
+    top:-300px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+/* NAME */
+
+.hero-card h1{
+
+    font-size:clamp(42px,7vw,76px);
+
+    letter-spacing:-3px;
+
+    line-height:1;
+
+    position:relative;
+}
+
+.hero-card h1 span{
+    color:var(--cyan);
+
+    text-shadow:
+        0 0 35px rgba(53,230,208,.25);
+}
+
+.role{
+
+    margin-top:25px;
+
+    color:var(--cyan);
+
+    font-size:15px;
+
+    letter-spacing:5px;
+
+    font-weight:bold;
+}
+
+.description{
+
+    max-width:650px;
+
+    margin:25px auto 0;
+
+    color:#b8c5d0;
+
+    font-size:17px;
+
+    line-height:1.7;
+}
+
+/* DIVIDER */
+
+.divider{
+
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(53,230,208,.4),
+        transparent
+    );
+
+    margin:40px 0 30px;
+}
+
+/* STATUS */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.stat small{
+
+    display:block;
+
+    color:#718291;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    margin-bottom:8px;
+}
+
+.stat strong{
+
+    color:#e9f2f7;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+}
+
+.stat strong.active{
+    color:var(--cyan);
+}
+
+/* BUTTONS */
+
+.buttons{
+
+    margin-top:38px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 25px;
+
+    border-radius:7px;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:.5px;
+
+    transition:.3s;
+}
+
+.btn-primary{
+
+    color:#03100f;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 25px rgba(53,230,208,.15);
+}
+
+.btn-secondary{
+
+    color:var(--cyan);
+
+    border:1px solid rgba(53,230,208,.35);
+
+    background:rgba(53,230,208,.04);
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.35);
+}
+
+/* AUTOMATION SYSTEM */
+
+.automation{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.65;
+}
+
+.node{
+
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 20px var(--cyan);
+
+    animation:pulse 2s infinite;
+}
+
+.node1{
+    left:8%;
+    top:30%;
+}
+
+.node2{
+    left:17%;
+    top:70%;
+}
+
+.node3{
+    right:12%;
+    top:27%;
+}
+
+.node4{
+    right:20%;
+    bottom:20%;
+}
+
+.node5{
+    left:45%;
+    top:12%;
+}
+
+.line{
+
+    position:absolute;
+
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(53,230,208,.4),
+        transparent
+    );
+
+    transform-origin:left center;
+}
+
+.line1{
+    width:350px;
+    left:9%;
+    top:31%;
+    transform:rotate(18deg);
+}
+
+.line2{
+    width:300px;
+    right:11%;
+    top:29%;
+    transform:rotate(150deg);
+}
+
+.line3{
+    width:420px;
+    left:18%;
+    bottom:29%;
+    transform:rotate(-15deg);
+}
+
+.line4{
+    width:300px;
+    right:19%;
+    bottom:22%;
+    transform:rotate(170deg);
+}
+
+/* TECHNICAL LABELS */
+
+.tech-label{
+
+    position:absolute;
+
+    color:rgba(160,190,205,.45);
+
+    font-family:monospace;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+.label1{
+    left:6%;
+    top:42%;
+}
+
+.label2{
+    right:7%;
+    top:48%;
+}
+
+.label3{
+    left:13%;
+    bottom:16%;
+}
+
+.label4{
+    right:14%;
+    bottom:34%;
+}
+
+/* BOTTOM */
+
+.bottom-info{
+
+    margin-top:45px;
+
+    color:#718291;
+
+    font-family:monospace;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+/* ANIMATIONS */
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(.8);
+        opacity:.45;
+    }
+
+    50%{
+        transform:scale(1.5);
+        opacity:1;
+    }
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding-top:100px;
+    }
+
+    .hero-card{
+
+        padding:45px 22px 35px;
+
+        border-radius:18px;
+    }
+
+    .hero-card h1{
+        font-size:45px;
+    }
+
+    .role{
+        font-size:11px;
+        letter-spacing:3px;
+    }
+
+    .description{
+        font-size:14px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .automation{
+        opacity:.3;
+    }
+
+    .tech-label{
+        display:none;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="nav-container">
+
+    <div class="logo">
+        BESLIN<span>.CONTROLS</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="professional-profile.html">
+                Professional Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="professional-profile.html#projects">
+                Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="professional-profile.html#contact">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+</nav>
+
+
+<!-- TECHNICAL BACKGROUND -->
+
+<div class="automation">
+
+    <div class="node node1"></div>
+    <div class="node node2"></div>
+    <div class="node node3"></div>
+    <div class="node node4"></div>
+    <div class="node node5"></div>
+
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+    <div class="line line4"></div>
+
+    <div class="tech-label label1">
+        PLC_INPUT_01
+    </div>
+
+    <div class="tech-label label2">
+        HMI_NETWORK
+    </div>
+
+    <div class="tech-label label3">
+        SAFETY_IO
+    </div>
+
+    <div class="tech-label label4">
+        MACHINE_OUTPUT
+    </div>
+
+</div>
+
+
+<!-- HOME -->
+
+<main class="hero">
+
+<div class="hero-content">
+
+    <div class="eyebrow">
+        CONTROL • AUTOMATION • ENGINEERING
+    </div>
+
+
+    <div class="hero-card">
+
+        <h1>
+            BESLIN<br>
+            <span>SAM MATHEW</span>
+        </h1>
+
+
+        <div class="role">
+            PLC AUTOMATION SYSTEMS ENGINEER
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <div class="stats">
+               
+           
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a
+                href="professional-profile.html"
+                class="btn btn-primary">
+
+                PROFESSIONAL PROFILE →
+
+            </a>
+
+
+            <a
+                href="professional-profile.html#projects"
+                class="btn btn-secondary">
+
+                VIEW PROJECTS
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom-info">
+
+        STUDIO 5000 · TIA PORTAL · FACTORYTALK · PLC · HMI · COMMISSIONING
+
+    </div>
+
+</div>
+
+</main>
+
+
+</body>
+</html>
