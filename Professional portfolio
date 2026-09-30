@@ -1,0 +1,2038 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beslin Sam Mathew | PLC Automation Systems Engineer</title>
+
+<style>
+
+/* =========================================================
+   BESLIN SAM MATHEW
+   PLC - AUTOMATION SYSTEMS ENGINEER
+   PROFESSIONAL PROFILE
+   ========================================================= */
+
+:root {
+    --bg: #060b12;
+    --bg2: #0a111b;
+    --panel: #0d1724;
+    --panel2: #101d2c;
+
+    --blue: #00aaff;
+    --cyan: #00e5ff;
+    --orange: #ff9d00;
+
+    --text: #f2f7fb;
+    --muted: #91a4b7;
+    --border: rgba(0, 180, 255, 0.20);
+
+    --glow: 0 0 25px rgba(0, 170, 255, 0.18);
+}
+
+/* ================= GLOBAL ================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at 20% 10%, rgba(0,170,255,.08), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(0,229,255,.05), transparent 30%),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Technical grid */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(0,170,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,170,255,.035) 1px, transparent 1px);
+
+    background-size: 45px 45px;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    width: min(1150px, 92%);
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= NAV ================= */
+
+.nav {
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    background: rgba(6,11,18,.78);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 15px 0;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: monospace;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-family: monospace;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+    text-shadow: 0 0 10px rgba(0,229,255,.7);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.system-label {
+    color: var(--cyan);
+
+    font-family: monospace;
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+    opacity: 0;
+    animation: fadeUp .8s .2s forwards;
+}
+
+.system-label::before {
+    content: "● ";
+    color: var(--orange);
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+
+    line-height: .95;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+
+    opacity: 0;
+    animation: fadeUp .8s .4s forwards;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+
+    text-shadow:
+        0 0 25px rgba(0,229,255,.25);
+}
+
+.hero-title {
+    font-family: monospace;
+
+    color: var(--blue);
+
+    font-size: clamp(17px, 2vw, 25px);
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+
+    opacity: 0;
+    animation: fadeUp .8s .6s forwards;
+}
+
+.hero-description {
+    max-width: 760px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    opacity: 0;
+    animation: fadeUp .8s .8s forwards;
+}
+
+/* ================= BUTTON ================= */
+
+.button-row {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 35px;
+
+    opacity: 0;
+    animation: fadeUp .8s 1s forwards;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 20px;
+
+    border: 1px solid var(--blue);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    transition: .3s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.btn:hover {
+    background: var(--blue);
+
+    box-shadow:
+        0 0 25px rgba(0,170,255,.35);
+
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    border-color: rgba(255,255,255,.15);
+    color: var(--muted);
+}
+
+.btn.secondary:hover {
+    border-color: var(--cyan);
+    color: white;
+    background: transparent;
+}
+
+/* ================= SIGNAL ANIMATION ================= */
+
+.signal-system {
+    position: absolute;
+
+    right: -50px;
+    bottom: 70px;
+
+    width: 420px;
+    height: 250px;
+
+    opacity: .75;
+}
+
+.node {
+    position: absolute;
+
+    padding: 13px 18px;
+
+    border: 1px solid rgba(0,229,255,.3);
+
+    background: rgba(8,18,30,.8);
+
+    color: var(--cyan);
+
+    font-family: monospace;
+
+    font-size: 11px;
+
+    box-shadow: var(--glow);
+}
+
+.node.sensor {
+    left: 0;
+    top: 20px;
+}
+
+.node.plc {
+    left: 160px;
+    top: 100px;
+
+    border-color: var(--blue);
+}
+
+.node.hmi {
+    right: 0;
+    top: 30px;
+}
+
+.node.motor {
+    right: 20px;
+    bottom: 10px;
+}
+
+.line {
+    position: absolute;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--cyan),
+        transparent
+    );
+
+    animation: signal 2s linear infinite;
+}
+
+.line.one {
+    width: 170px;
+    left: 70px;
+    top: 55px;
+}
+
+.line.two {
+    width: 170px;
+    left: 190px;
+    top: 110px;
+    transform: rotate(-25deg);
+}
+
+.line.three {
+    width: 170px;
+    left: 210px;
+    top: 145px;
+    transform: rotate(25deg);
+}
+
+@keyframes signal {
+    0% {
+        opacity: .1;
+        transform: translateX(-20px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .1;
+        transform: translateX(20px);
+    }
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 100px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-label {
+    font-family: monospace;
+
+    color: var(--cyan);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: clamp(32px, 5vw, 52px);
+
+    line-height: 1;
+
+    margin-bottom: 45px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap: 45px;
+}
+
+.about-text {
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.engineering-panel {
+    border: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,170,255,.06),
+            rgba(0,0,0,.2)
+        );
+
+    padding: 25px;
+
+    box-shadow: var(--glow);
+}
+
+.panel-header {
+    font-family: monospace;
+
+    font-size: 12px;
+
+    color: var(--cyan);
+
+    margin-bottom: 20px;
+}
+
+.focus-item {
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.06);
+
+    font-family: monospace;
+
+    font-size: 13px;
+}
+
+.focus-item:last-child {
+    border-bottom: none;
+}
+
+.focus-item span {
+    color: var(--orange);
+    margin-right: 8px;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.skill-card {
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    padding: 25px;
+
+    min-height: 180px;
+
+    transition: .35s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.skill-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: rgba(0,229,255,.07);
+
+    right: -30px;
+    bottom: -30px;
+
+    transition: .4s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 10px 40px rgba(0,170,255,.15);
+}
+
+.skill-card:hover::after {
+    transform: scale(2);
+}
+
+.skill-number {
+    font-family: monospace;
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    font-size: 17px;
+
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.timeline {
+    position: relative;
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            var(--cyan),
+            transparent
+        );
+}
+
+.timeline-item {
+    padding-left: 45px;
+
+    margin-bottom: 60px;
+
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: 4px;
+    top: 5px;
+
+    width: 13px;
+    height: 13px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 15px var(--cyan);
+
+    border-radius: 50%;
+}
+
+.timeline-date {
+    font-family: monospace;
+
+    color: var(--orange);
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+}
+
+.timeline-item h3 {
+    font-size: 25px;
+
+    margin-bottom: 5px;
+}
+
+.timeline-company {
+    color: var(--cyan);
+
+    font-family: monospace;
+
+    margin-bottom: 15px;
+}
+
+.timeline-item p {
+    color: var(--muted);
+}
+
+/* ================= PROJECTS ================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.project {
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    padding: 28px;
+
+    transition: .35s;
+
+    position: relative;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 15px 40px rgba(0,170,255,.14);
+}
+
+.project-number {
+    font-family: monospace;
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.project-client {
+    color: var(--cyan);
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+.project-details {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+.detail {
+    padding: 10px;
+
+    background: rgba(255,255,255,.025);
+
+    border: 1px solid rgba(255,255,255,.05);
+}
+
+.detail small {
+    display: block;
+
+    color: #64798d;
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    margin-bottom: 4px;
+}
+
+.detail span {
+    font-size: 12px;
+
+    color: var(--text);
+}
+
+.project-description {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+/* ================= AUTOMATION FLOW ================= */
+
+.flow {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.flow-node {
+    min-width: 135px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+
+    background: var(--panel);
+
+    font-family: monospace;
+
+    font-size: 11px;
+
+    color: var(--cyan);
+
+    position: relative;
+}
+
+.flow-arrow {
+    color: var(--orange);
+
+    font-size: 20px;
+
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .35;
+    }
+}
+
+/* ================= EDUCATION ================= */
+
+.education {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.edu-card {
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    padding: 30px;
+
+    transition: .3s;
+}
+
+.edu-card:hover {
+    border-color: var(--cyan);
+
+    transform: translateY(-5px);
+}
+
+.edu-year {
+    color: var(--orange);
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    margin-bottom: 12px;
+}
+
+.edu-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.edu-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+/* ================= LANGUAGES ================= */
+
+.languages {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.language {
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.language strong {
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+.language span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    text-align: center;
+
+    padding-bottom: 80px;
+}
+
+.contact-box {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 50px;
+
+    border: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,170,255,.08),
+            transparent 60%
+        );
+}
+
+.contact-box h2 {
+    font-size: clamp(35px, 6vw, 60px);
+
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    color: var(--muted);
+
+    margin-bottom: 30px;
+}
+
+.contact-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    padding: 12px 18px;
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    transition: .3s;
+}
+
+.contact-links a:hover {
+    border-color: var(--cyan);
+
+    color: var(--cyan);
+
+    box-shadow: 0 0 20px rgba(0,229,255,.12);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    padding: 30px 0;
+
+    text-align: center;
+
+    color: #607386;
+
+    font-family: monospace;
+
+    font-size: 11px;
+}
+
+footer strong {
+    color: var(--cyan);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .signal-system {
+        opacity: .25;
+
+        right: -130px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .hero {
+        min-height: 800px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .button-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education {
+        grid-template-columns: 1fr;
+    }
+
+    .languages {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .flow {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .contact-box {
+        padding: 30px 20px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<div class="logo">
+BESLIN<span>.</span>
+</div>
+
+<div class="nav-links">
+
+<a href="#about">ABOUT</a>
+<a href="#skills">SKILLS</a>
+<a href="#experience">EXPERIENCE</a>
+<a href="#projects">PROJECTS</a>
+<a href="#education">EDUCATION</a>
+<a href="#contact">CONTACT</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="system-label">
+AUTOMATION ENGINEERING PROFILE
+</div>
+
+<h1>
+BESLIN<br>
+<span>SAM MATHEW</span>
+</h1>
+
+<div class="hero-title">
+PLC – AUTOMATION SYSTEMS ENGINEER
+</div>
+
+<p class="hero-description">
+
+Controls & Automation Project Engineer with experience in
+PLC logic development, HMI design, industrial networking,
+and on-site commissioning across automated production systems.
+
+</p>
+
+<div class="button-row">
+
+<a class="btn" href="#projects">
+VIEW PROJECTS →
+</a>
+
+<a class="btn secondary" href="#contact">
+CONNECT
+</a>
+
+</div>
+
+</div>
+
+
+<!-- AUTOMATION NETWORK -->
+
+<div class="signal-system">
+
+<div class="node sensor">
+SENSORS
+</div>
+
+<div class="node plc">
+PLC / CONTROL
+</div>
+
+<div class="node hmi">
+HMI
+</div>
+
+<div class="node motor">
+FIELD DEVICES
+</div>
+
+<div class="line one"></div>
+<div class="line two"></div>
+<div class="line three"></div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-label">
+01 / PROFILE
+</div>
+
+<h2 class="section-title">
+ABOUT THE ENGINEER
+</h2>
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<p>
+I am a Controls & Automation Project Engineer focused on
+PLC logic development, HMI design, industrial networking,
+and on-site commissioning across automated production systems.
+</p>
+
+<p>
+My technical experience includes Rockwell Automation
+Studio 5000, Siemens TIA Portal, FactoryTalk View,
+sensors, safety interlocks, and field devices.
+</p>
+
+<p>
+My engineering approach focuses on delivering robust
+automation solutions while supporting cycle time,
+system reliability, plant safety, clear documentation,
+and stakeholder communication.
+</p>
+
+</div>
+
+
+<div class="engineering-panel">
+
+<div class="panel-header">
+ENGINEERING FOCUS
+</div>
+
+<div class="focus-item">
+<span>01</span>
+PLC LOGIC DEVELOPMENT
+</div>
+
+<div class="focus-item">
+<span>02</span>
+HMI DESIGN & DEVELOPMENT
+</div>
+
+<div class="focus-item">
+<span>03</span>
+INDUSTRIAL NETWORKING
+</div>
+
+<div class="focus-item">
+<span>04</span>
+ON-SITE COMMISSIONING
+</div>
+
+<div class="focus-item">
+<span>05</span>
+SENSORS & FIELD DEVICES
+</div>
+
+<div class="focus-item">
+<span>06</span>
+SAFETY INTERLOCKS
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-label">
+02 / TECHNOLOGY
+</div>
+
+<h2 class="section-title">
+TECHNICAL TOOLKIT
+</h2>
+
+<div class="skills-grid">
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+PLC / 01
+</div>
+
+<h3>
+ROCKWELL AUTOMATION
+</h3>
+
+<p>
+Allen Bradley RSLogix 500
+and Studio 5000.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+PLC / 02
+</div>
+
+<h3>
+SIEMENS
+</h3>
+
+<p>
+Siemens TIA Portal
+with hands-on project experience.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+HMI / 03
+</div>
+
+<h3>
+FACTORYTALK VIEW
+</h3>
+
+<p>
+Allen Bradley FactoryTalk
+View for HMI applications.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+AUTO / 04
+</div>
+
+<h3>
+COMMISSIONING
+</h3>
+
+<p>
+On-site commissioning,
+validation and implementation.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+FIELD / 05
+</div>
+
+<h3>
+FIELD DEVICES
+</h3>
+
+<p>
+Hands-on exposure to sensors
+and industrial field devices.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+SAFE / 06
+</div>
+
+<h3>
+SAFETY INTERLOCKS
+</h3>
+
+<p>
+Experience with safety
+interlocks within automation systems.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+NET / 07
+</div>
+
+<h3>
+INDUSTRIAL NETWORKING
+</h3>
+
+<p>
+Industrial networking within
+automated production systems.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+R&D / 08
+</div>
+
+<h3>
+PROBLEM SOLVING
+</h3>
+
+<p>
+Problem solving, adaptation
+and engineering support.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+<div class="container">
+
+<div class="section-label">
+03 / CAREER
+</div>
+
+<h2 class="section-title">
+PROFESSIONAL EXPERIENCE
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+04 NOV 2024 — PRESENT
+</div>
+
+<h3>
+PROJECT ENGINEER – PLC
+</h3>
+
+<div class="timeline-company">
+DENAR AUTOMATIONS AND CONTROLS LLP
+</div>
+
+<p>
+Pune, Maharashtra, India
+</p>
+
+<br>
+
+<p>
+Working in PLC automation engineering involving PLC logic
+development, HMI design, industrial networking and
+on-site commissioning across automated production systems.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= AUTOMATION FLOW ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+04 / SYSTEM
+</div>
+
+<h2 class="section-title">
+AUTOMATION WORKFLOW
+</h2>
+
+<div class="flow">
+
+<div class="flow-node">
+FIELD<br>SENSORS
+</div>
+
+<div class="flow-arrow">
+→
+</div>
+
+<div class="flow-node">
+I/O<br>SYSTEM
+</div>
+
+<div class="flow-arrow">
+→
+</div>
+
+<div class="flow-node">
+PLC
+</div>
+
+<div class="flow-arrow">
+→
+</div>
+
+<div class="flow-node">
+CONTROL<br>LOGIC
+</div>
+
+<div class="flow-arrow">
+→
+</div>
+
+<div class="flow-node">
+HMI
+</div>
+
+<div class="flow-arrow">
+→
+</div>
+
+<div class="flow-node">
+FIELD<br>DEVICES
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-label">
+05 / PROJECTS
+</div>
+
+<h2 class="section-title">
+SELECTED AUTOMATION PROJECTS
+</h2>
+
+<div class="projects-grid">
+
+
+<!-- PROJECT 01 -->
+
+<div class="project">
+
+<div class="project-number">
+PROJECT / 01
+</div>
+
+<h3>
+BEV
+</h3>
+
+<div class="project-client">
+MAHINDRA & MAHINDRA LTD — CHAKAN, PUNE
+</div>
+
+<div class="project-details">
+
+<div class="detail">
+<small>PLC</small>
+<span>Allen Bradley – Studio 5000</span>
+</div>
+
+<div class="detail">
+<small>STANDARD</small>
+<span>Mahindra Standard</span>
+</div>
+
+</div>
+
+<p class="project-description">
+Program and HMI validation.
+</p>
+
+</div>
+
+
+<!-- PROJECT 02 -->
+
+<div class="project">
+
+<div class="project-number">
+PROJECT / 02
+</div>
+
+<h3>
+P500 – BODY SIDE
+</h3>
+
+<div class="project-client">
+TATA ELECTRIC MOBILITY — SANAND, GUJARAT
+</div>
+
+<div class="project-details">
+
+<div class="detail">
+<small>PLC</small>
+<span>Allen Bradley – Studio 5000</span>
+</div>
+
+<div class="detail">
+<small>STANDARD</small>
+<span>FNA Standard</span>
+</div>
+
+</div>
+
+<p class="project-description">
+Program implementation, commissioning
+and HMI development.
+</p>
+
+</div>
+
+
+<!-- PROJECT 03 -->
+
+<div class="project">
+
+<div class="project-number">
+PROJECT / 03
+</div>
+
+<h3>
+X401 – UBC LINE
+</h3>
+
+<div class="project-client">
+TATA ELECTRIC MOBILITY — SANAND, GUJARAT
+</div>
+
+<div class="project-details">
+
+<div class="detail">
+<small>PLC</small>
+<span>Allen Bradley – Studio 5000</span>
+</div>
+
+<div class="detail">
+<small>STANDARD</small>
+<span>FNA Standard</span>
+</div>
+
+</div>
+
+<p class="project-description">
+Modified the existing line for building
+new variant – SIERRA.
+</p>
+
+</div>
+
+
+<!-- PROJECT 04 -->
+
+<div class="project">
+
+<div class="project-number">
+PROJECT / 04
+</div>
+
+<h3>
+X401 – BODY SIDE
+</h3>
+
+<div class="project-client">
+TATA ELECTRIC MOBILITY — SANAND, GUJARAT
+</div>
+
+<div class="project-details">
+
+<div class="detail">
+<small>PLC</small>
+<span>Allen Bradley – Studio 5000</span>
+</div>
+
+<div class="detail">
+<small>STANDARD</small>
+<span>FNA Standard</span>
+</div>
+
+</div>
+
+<p class="project-description">
+Modified the existing line for building
+new variant – SIERRA.
+</p>
+
+</div>
+
+
+<!-- PROJECT 05 -->
+
+<div class="project">
+
+<div class="project-number">
+PROJECT / 05
+</div>
+
+<h3>
+X401 – PROTO LINE
+</h3>
+
+<div class="project-client">
+TATA ELECTRIC MOBILITY — SANAND, GUJARAT
+</div>
+
+<div class="project-details">
+
+<div class="detail">
+<small>PLC</small>
+<span>Allen Bradley – Studio 5000</span>
+</div>
+
+<div class="detail">
+<small>STANDARD</small>
+<span>FNA Standard</span>
+</div>
+
+</div>
+
+<p class="project-description">
+Developed offline PLC program and HMI.
+Onsite commissioning completed.
+</p>
+
+</div>
+
+
+<!-- PROJECT 06 -->
+
+<div class="project">
+
+<div class="project-number">
+PROJECT / 06
+</div>
+
+<h3>
+STEP02
+</h3>
+
+<div class="project-client">
+MAHINDRA & MAHINDRA LTD — CHAKAN, PUNE
+</div>
+
+<div class="project-details">
+
+<div class="detail">
+<small>PLC</small>
+<span>Siemens TIA Portal V17</span>
+</div>
+
+<div class="detail">
+<small>STANDARD</small>
+<span>ABB Paint Standard</span>
+</div>
+
+</div>
+
+<p class="project-description">
+Paint Line Commissioning.
+</p>
+
+</div>
+
+
+<!-- PROJECT 07 -->
+
+<div class="project">
+
+<div class="project-number">
+PROJECT / 07
+</div>
+
+<h3>
+MERCEDES BENZ
+</h3>
+
+<div class="project-client">
+PUNE, MAHARASHTRA
+</div>
+
+<div class="project-details">
+
+<div class="detail">
+<small>PLC</small>
+<span>Siemens TIA Portal V17</span>
+</div>
+
+<div class="detail">
+<small>SCOPE</small>
+<span>PLC & HMI Upgrade</span>
+</div>
+
+</div>
+
+<p class="project-description">
+PLC & HMI version upgrade.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+<div class="container">
+
+<div class="section-label">
+06 / EDUCATION
+</div>
+
+<h2 class="section-title">
+EDUCATION
+</h2>
+
+<div class="education">
+
+
+<div class="edu-card">
+
+<div class="edu-year">
+2019 — 2023
+</div>
+
+<h3>
+Bachelor of Technology
+</h3>
+
+<p>
+Electronics and Communication Engineering
+</p>
+
+<br>
+
+<p>
+APJ Abdul Kalam Technological University
+<br>
+Kerala, India
+</p>
+
+</div>
+
+
+<div class="edu-card">
+
+<div class="edu-year">
+MARCH 2019
+</div>
+
+<h3>
+Higher Secondary Education
+</h3>
+
+<p>
+Computer Science Group
+</p>
+
+<br>
+
+<p>
+Board of Higher Secondary Examinations
+<br>
+Government of Kerala
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LANGUAGES ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+07 / COMMUNICATION
+</div>
+
+<h2 class="section-title">
+LANGUAGES
+</h2>
+
+<div class="languages">
+
+<div class="language">
+
+<strong>
+ENGLISH
+</strong>
+
+<span>
+Proficient
+</span>
+
+</div>
+
+<div class="language">
+
+<strong>
+MALAYALAM
+</strong>
+
+<span>
+Mother Tongue
+</span>
+
+</div>
+
+<div class="language">
+
+<strong>
+HINDI
+</strong>
+
+<span>
+Eloquent
+</span>
+
+</div>
+
+<div class="language">
+
+<strong>
+TAMIL
+</strong>
+
+<span>
+Eloquent
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<div class="section-label">
+08 / CONNECT
+</div>
+
+<h2>
+LET'S CONNECT
+</h2>
+
+<p>
+Interested in industrial automation, PLC engineering,
+control systems and automation projects?
+</p>
+
+<div class="contact-links">
+
+<a href="mailto:beslinsam@gmail.com">
+EMAIL
+</a>
+
+<a href="tel:+917736351570">
+CALL
+</a>
+
+<!-- Replace the # with your actual LinkedIn URL -->
+
+<a href="#" target="_blank">
+LINKEDIN
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<strong>
+BESLIN SAM MATHEW
+</strong>
+
+<br><br>
+
+PLC • HMI • INDUSTRIAL AUTOMATION • COMMISSIONING
+
+<br><br>
+
+Kollam, Kerala, India
+
+<br><br>
+
+© 2026 Beslin Sam Mathew
+
+</div>
+
+</footer>
+
+</body>
+</html>
+```
